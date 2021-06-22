@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color:#000;
 
 `;
-export const MenuGlobal = styled.div `
+export const MenuGlobalContainer = styled.div `
   width: 100px;
   background:#282B33;
   display:flex;

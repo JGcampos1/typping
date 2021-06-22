@@ -11,7 +11,6 @@ const Routes: React.FC = () => (
     <BrowserRouter>
 
         <Switch>
-
             <MenuGlobal>    
                 <Route path="/" component={Home} exact />
                 <Route path="/play" component={Play} exact />

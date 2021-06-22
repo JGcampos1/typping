@@ -1,33 +1,42 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { Container,MenuGlobal } from './styles';
+import { Container,MenuGlobalContainer } from './styles';
 import {FaHome,FaPlay,FaUser} from 'react-icons/fa'
-const menuGlobal: React.FC = ({children}) => {
+
+
+const MenuGlobal: React.FC = ({children}) => {
+  const history = useHistory();
   return (
     <>
       <Container>
-        <MenuGlobal>
+        <MenuGlobalContainer>
           <div className='containerIcons'>
-            <div className='IconLabel'>
+            <div className='IconLabel' onClick={()=>{
+              history.push('/')
+            }}>
               <FaHome/>
               <p>Home</p>
             </div>
-            <div className='IconLabel'>
+            <div className='IconLabel' onClick={()=>{
+              history.push('/play')
+            }}>
               <FaPlay/>
               <p>Play</p>
             </div>
           </div>
 
-          <div className='IconLabel'>
+          <div className='IconLabel' onClick={()=>{
+              history.push('/user')
+            }}>
             <FaUser/>
             <p>Perfil</p>
           </div>
-        </MenuGlobal>
-
+        </MenuGlobalContainer>
         {children}
       </Container>
     </>
   );
 }
 
-export default menuGlobal;
+export default MenuGlobal;
